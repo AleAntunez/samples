@@ -159,6 +159,7 @@ int psvDebugScreenPrintf(const char *format, ...) {
     va_start(opt, format);
     int ret = asprintf(&buf, format, opt);
     psvDebugScreenPuts(buf);
+    free(buf);
     va_end(opt);
     return ret;
 }
